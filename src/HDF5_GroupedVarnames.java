@@ -155,7 +155,7 @@ public class HDF5_GroupedVarnames
         Integer channelIndex = new Integer(tokens[1]);
         System.out.println("channelIndex: " + channelIndex.toString());
         System.out.println("left token: " + tokens[0]);
-        tokens = tokens[0].split("/t");
+        tokens = tokens[0].split(formatTokens[0]);
         Integer frameIndex = new Integer(tokens[1]);
         System.out.println("frameIndex: " + frameIndex.toString());
 
