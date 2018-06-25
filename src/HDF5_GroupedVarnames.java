@@ -294,7 +294,7 @@ public class HDF5_GroupedVarnames
       // insert wanted frames and channels
       for(int f=minFrame;f<maxFrame+1;f+=skipFrame)
       {
-        TimeFrame frameAllChannels = completeFrameList.get(f);
+        TimeFrame frameAllChannels = completeFrameList.get(f-minFrameIndex);
         TimeFrame frame = new TimeFrame(frameAllChannels.getFrameIndex());
         // TODO remove unwanted channels
         for(int c=minChannel;c<maxChannel+1;c+=skipChannel)
