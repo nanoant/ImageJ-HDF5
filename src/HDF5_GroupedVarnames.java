@@ -175,7 +175,7 @@ public class HDF5_GroupedVarnames
            maxChannelIndex = channelIndex.intValue();
         maxChannelIndex = Math.max(maxChannelIndex,channelIndex.intValue());
 
-        TimeFrame frame = new TimeFrame(frameIndex.intValue());
+        TimeFrame frame = new TimeFrame(tokens[1]);
         int idx = frameList.indexOf(frame);
         if(idx != -1)
         {
@@ -295,7 +295,7 @@ public class HDF5_GroupedVarnames
       for(int f=minFrame;f<maxFrame+1;f+=skipFrame)
       {
         TimeFrame frameAllChannels = completeFrameList.get(f-minFrameIndex);
-        TimeFrame frame = new TimeFrame(frameAllChannels.getFrameIndex());
+        TimeFrame frame = new TimeFrame(frameAllChannels.getFrameIndexString());
         // TODO remove unwanted channels
         for(int c=minChannel;c<maxChannel+1;c+=skipChannel)
         {

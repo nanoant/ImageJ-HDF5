@@ -27,11 +27,13 @@ public class TimeFrame implements Comparable
   public TimeFrame(int index)
         {
           frameIndex = index;
+          frameIndexString = Integer.toString(index);
         }
 
   public TimeFrame(String index)
         {
           frameIndex = Integer.parseInt(index);
+          frameIndexString = index;
         }
 
   public void addChannel(int index)
@@ -60,6 +62,7 @@ public class TimeFrame implements Comparable
   public String toString()
         {
           String s = "FrameIdx: " + Integer.toString(frameIndex) + "; ";
+          s = s + "frameIdxString: " + frameIndexString + "; ";
           s = s + "nChannels: " + Integer.toString(channels.size()) + "; ";
           s = s + "channels: ";
           for(int i=0;i<channels.size();i++)
@@ -76,6 +79,11 @@ public class TimeFrame implements Comparable
   public int getFrameIndex()
         {
           return frameIndex;
+        }
+    
+  public String getFrameIndexString()
+        {
+          return frameIndexString;
         }
     
   public int[] getChannelIndices()
@@ -100,5 +108,6 @@ public class TimeFrame implements Comparable
         }
     
   private final int frameIndex;
+  private final String frameIndexString;
   private final ArrayList<Integer> channels = new ArrayList<Integer>();
 }

@@ -609,12 +609,12 @@ public class HDF5_Reader_ implements PlugIn
               System.out.println("frame is null");
           if(formatTokens.length == 2)
               dsName = formatTokens[0]
-                  + Integer.toString(f.getFrameIndex())
+                  + f.getFrameIndexString()
                   + formatTokens[1]
                   + Integer.toString(f.getChannelIndices()[0]);
           else if(formatTokens.length == 3)
               dsName = formatTokens[0]
-                  + Integer.toString(f.getFrameIndex())
+                  + f.getFrameIndexString()
                   + formatTokens[1]
                   + Integer.toString(f.getChannelIndices()[0])
                   + formatTokens[2];
@@ -753,12 +753,12 @@ public class HDF5_Reader_ implements PlugIn
             {
               if(formatTokens.length == 2)
                   dsName = formatTokens[0]
-                      + Integer.toString(f.getFrameIndex())
+                      + f.getFrameIndexString()
                       + formatTokens[1]
                       + Integer.toString(f.getChannelIndices()[cIdx]);
               else if(formatTokens.length == 3)
                   dsName = formatTokens[0]
-                      + Integer.toString(f.getFrameIndex())
+                      + f.getFrameIndexString()
                       + formatTokens[1]
                       + Integer.toString(f.getChannelIndices()[cIdx])
                       + formatTokens[2];
