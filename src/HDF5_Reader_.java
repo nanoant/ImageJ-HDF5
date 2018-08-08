@@ -279,7 +279,7 @@ public class HDF5_Reader_ implements PlugIn
         // get unmatched names
         List<String> unmatchedVarNames 
             = groupedVarnames.getUnmatchedVarNames();
-        if(showUnmatchedDataSetNames)
+        if(showUnmatchedDataSetNames || groupedVarnames.getNFrames()==0)
         {
           // add all unmatched data set names to the dialog
           String[] varSelections = new String[unmatchedVarNames.size()];
@@ -461,7 +461,6 @@ public class HDF5_Reader_ implements PlugIn
                 System.out.println("read ranges again");
                 frameRange = gd.getNextString();
                 channelRange = gd.getNextString();
-          
               }
               if (gd.wasCanceled())
               {
@@ -470,7 +469,7 @@ public class HDF5_Reader_ implements PlugIn
               // the parameters for the range have correct format
             }
 
-        if(showUnmatchedDataSetNames)
+        if(showUnmatchedDataSetNames || groupedVarnames.getNFrames()==0)
         {
           varList = new ArrayList<Dataset>();
           // fill varList with unmatched var names
