@@ -322,12 +322,12 @@ public class HDF5_GroupedVarnames
       // insert wanted frames and channels
       for(int f=minFrame;f<maxFrame+1;f+=skipFrame)
       {
-        TimeFrame frame = new TimeFrame(f);
-        int idx = completeFrameList.indexOf(frame);
+        int idx = completeFrameList.indexOf(new TimeFrame(f));
         // System.out.println("index of frame in list: " +
         //                    Integer.toString(idx));
         if(idx != -1)
         {
+          TimeFrame frame = new TimeFrame(completeFrameList.get(idx).getFrameIndexString());
           // TODO remove unwanted channels
           for(int c=minChannel;c<maxChannel+1;c+=skipChannel)
           {
